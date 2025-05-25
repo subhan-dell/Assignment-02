@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customers</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <h1>Customer List</h1>
+  <a href="/customers/new">Add New Customer</a>
+  <ul>
+    <% customers.forEach(customer => { %>
+      <li>
+        <a href="/customers/<%= customer._id %>"><%= customer.name %></a>
+        (<%= customer.status %>)
+        <a href="/customers/<%= customer._id %>/edit">Edit</a>
+        <form method="POST" action="/customers/<%= customer._id %>?_method=DELETE" style="display:inline">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

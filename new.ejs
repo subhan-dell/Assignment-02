@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Customer</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <h1>Add Customer</h1>
+  <form method="POST" action="/customers">
+    <input name="name" placeholder="Name" required />
+    <input name="email" placeholder="Email" required />
+    <input name="phone" placeholder="Phone" required />
+    <select name="status">
+      <option value="Lead">Lead</option>
+      <option value="Prospect">Prospect</option>
+      <option value="Customer">Customer</option>
+    </select>
+    <textarea name="notes" placeholder="Notes"></textarea>
+    <button type="submit">Save</button>
+  </form>
+  <a href="/customers">Back to List</a>
+</body>
+</html>

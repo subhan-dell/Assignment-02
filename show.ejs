@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Details</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <h1><%= customer.name %></h1>
+  <p>Email: <%= customer.email %></p>
+  <p>Phone: <%= customer.phone %></p>
+  <p>Status: <%= customer.status %></p>
+  <p>Notes: <%= customer.notes %></p>
+  <a href="/customers/<%= customer._id %>/edit">Edit</a>
+  <form method="POST" action="/customers/<%= customer._id %>?_method=DELETE" style="display:inline">
+    <button type="submit">Delete</button>
+  </form>
+  <a href="/customers">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Customer</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <h1>Edit Customer</h1>
+  <form method="POST" action="/customers/<%= customer._id %>?_method=PUT">
+    <input name="name" value="<%= customer.name %>" required />
+    <input name="email" value="<%= customer.email %>" required />
+    <input name="phone" value="<%= customer.phone %>" required />
+    <select name="status">
+      <option value="Lead" <%= customer.status === 'Lead' ? 'selected' : '' %>>Lead</option>
+      <option value="Prospect" <%= customer.status === 'Prospect' ? 'selected' : '' %>>Prospect</option>
+      <option value="Customer" <%= customer.status === 'Customer' ? 'selected' : '' %>>Customer</option>
+    </select>
+    <textarea name="notes"><%= customer.notes %></textarea>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/customers">Back to List</a>
+</body>
+</html>
